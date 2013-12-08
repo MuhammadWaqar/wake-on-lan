@@ -1,18 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpKI>
 
-  <HelpKINode Title="Address property" Url="html/00e284d6-3d67-081d-9832-d2b01ed4e220.htm" />
-  <HelpKINode Title="Broadcast property" Url="html/6b2edd96-2ca7-316e-f0cb-e9adf9c8d031.htm" />
+  <HelpKINode Title="Abbreviate method" Url="html/8d342161-f2bc-1e25-c32c-88ab2a4b8dc0.htm" />
+  <HelpKINode Title="Address property" Url="html/d212c72d-a62b-4b22-14a7-263fa1b94c87.htm" />
+  <HelpKINode Title="AddressLength property" Url="html/ebd650eb-5552-f5d5-948b-0990c300c556.htm" />
+  <HelpKINode Title="AddressLength property" Url="html/f5b0be60-89d7-f625-daa8-95013b6ac3f5.htm" />
+  <HelpKINode Title="ArpRequest class" Url="html/5260df32-55b3-a3f0-6aaa-14cb1fd255ed.htm" />
+  <HelpKINode Title="ArpRequest class" Url="html/cc1cf95f-cfbb-fff2-ef32-df8a1d8f8061.htm" />
+  <HelpKINode Title="ArpRequest class">
+    <HelpKINode Title="about ArpRequest class" Url="html/5260df32-55b3-a3f0-6aaa-14cb1fd255ed.htm" />
+    <HelpKINode Title="all members" Url="html/cc1cf95f-cfbb-fff2-ef32-df8a1d8f8061.htm" />
+    <HelpKINode Title="methods" Url="html/f3bcf5c6-5aec-6d7b-b1bf-49b5a346b3c2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ArpRequest.Send method" Url="html/dc337389-8de7-edcf-5a43-db7b28f109e0.htm" />
+  <HelpKINode Title="ArpRequest.SendAsync method" Url="html/6c522131-8ba0-d4b5-3cac-dea6bf09a50e.htm" />
+  <HelpKINode Title="ArpRequestResult class" Url="html/6a4ef601-431a-a6c5-140f-90a701243a44.htm" />
+  <HelpKINode Title="ArpRequestResult class" Url="html/8d99f77f-83e2-9274-d706-789439cfb6ca.htm" />
+  <HelpKINode Title="ArpRequestResult class">
+    <HelpKINode Title="about ArpRequestResult class" Url="html/6a4ef601-431a-a6c5-140f-90a701243a44.htm" />
+    <HelpKINode Title="all members" Url="html/8d99f77f-83e2-9274-d706-789439cfb6ca.htm" />
+    <HelpKINode Title="constructor" Url="html/f52dc636-2182-5518-6be0-1fef5863bae6.htm" />
+    <HelpKINode Title="methods" Url="html/8263c7bd-7a33-9ade-8b9c-9eeb6331e789.htm" />
+    <HelpKINode Title="properties" Url="html/8cda93a9-089f-8e4e-56e3-683bc2a729ec.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ArpRequestResult.Address property" Url="html/d212c72d-a62b-4b22-14a7-263fa1b94c87.htm" />
+  <HelpKINode Title="ArpRequestResult.ArpRequestResult constructor" Url="html/f52dc636-2182-5518-6be0-1fef5863bae6.htm" />
+  <HelpKINode Title="ArpRequestResult.Exception property" Url="html/1979f1e0-d989-c479-bb39-93154a925124.htm" />
+  <HelpKINode Title="ArpRequestResult.ToString method" Url="html/89174d3d-7d8b-a526-09b8-9f7506f90385.htm" />
+  <HelpKINode Title="BitwiseAnd method" Url="html/285e08a9-5a5d-bc9f-e51b-6314ad1c79aa.htm" />
+  <HelpKINode Title="BitwiseAnd operator" Url="html/4e6377be-649d-b4e5-1d18-4ec272891fc9.htm" />
+  <HelpKINode Title="BitwiseOr method" Url="html/a4227ebe-d8a9-9401-bb3d-6047108de2b4.htm" />
+  <HelpKINode Title="BitwiseOr operator" Url="html/416c3e83-67a7-06e3-0fe4-7a6ebb9fd176.htm" />
+  <HelpKINode Title="Cidr property" Url="html/0b83211f-b0d5-5ebe-c47d-5e9f3be9415e.htm" />
+  <HelpKINode Title="Cidr property" Url="html/1cbdcc75-5fb1-ce2e-6d96-1e7826959c2f.htm" />
+  <HelpKINode Title="Empty property" Url="html/b9e1d5f7-ee4f-ccc9-e9f4-07bc4a9c7a8d.htm" />
+  <HelpKINode Title="Equality operator" Url="html/75383a14-7d3d-600e-3a4f-27e74a7f20a6.htm" />
+  <HelpKINode Title="Equals method" Url="html/e7fca351-0831-c204-7449-9f38447b501e.htm" />
+  <HelpKINode Title="Exception property" Url="html/1979f1e0-d989-c479-bb39-93154a925124.htm" />
+  <HelpKINode Title="ExcludeAll enumeration member" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
+  <HelpKINode Title="ExcludeUnusable enumeration member" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
+  <HelpKINode Title="Extend method" Url="html/c574b1a9-c4df-4ea4-4c7b-b30e13e117ba.htm" />
   <HelpKINode Title="GetAddressAdministrator method" Url="html/14faefe6-54de-9b32-7262-f4d0c20eacc4.htm" />
   <HelpKINode Title="GetAddressType method" Url="html/33cd5fdd-3098-67e5-7926-5bc903603eb9.htm" />
+  <HelpKINode Title="GetBroadcastAddress method" Url="html/b1b3eac0-36da-edb9-28f0-9a0cbf117aa9.htm" />
+  <HelpKINode Title="GetHashCode method" Url="html/69383bcd-1047-cbac-b832-d468cc2d70cf.htm" />
+  <HelpKINode Title="GetHostIdentifier method" Url="html/0e21af95-5420-d890-90ae-673b800cda28.htm" />
+  <HelpKINode Title="GetIsValidNetMask method" Url="html/019dcbdb-f670-ab37-06fc-b9292cf3275f.htm" />
+  <HelpKINode Title="GetMaskBytes method" Url="html/2607bcac-c646-edad-ecf3-c8bc397057c0.htm" />
+  <HelpKINode Title="GetMaskBytes method" Url="html/63c23e64-c868-53ce-a110-39ebd0d7484d.htm" />
+  <HelpKINode Title="GetNetworkPrefix method" Url="html/27147606-f938-5ee0-bcb3-3288c53917ce.htm" />
+  <HelpKINode Title="GetPasswordBytes method" Url="html/abd2e393-eddd-af76-882b-00ca0f32e397.htm" />
+  <HelpKINode Title="GetSiblingCount method" Url="html/6dc2f9b2-42d4-e61a-eeb3-8838cbc2d7d2.htm" />
+  <HelpKINode Title="GetSiblings method" Url="html/9cb6146b-6d2a-6927-a013-2020742e0be1.htm" />
   <HelpKINode Title="Global enumeration member" Url="html/ed0ea8d7-0efe-02d9-8a79-85ecc650d689.htm" />
+  <HelpKINode Title="IncludeAll enumeration member" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
+  <HelpKINode Title="IncludeBroadcast enumeration member" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
+  <HelpKINode Title="IncludeNetworkIdentifier enumeration member" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
+  <HelpKINode Title="IncludeSelf enumeration member" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
+  <HelpKINode Title="Inequality operator" Url="html/8daf588e-7ae3-6a36-0d05-6e63ab436e19.htm" />
+  <HelpKINode Title="INetMask interface" Url="html/89b102c6-c601-55bc-1043-4cfe6d0e1578.htm" />
+  <HelpKINode Title="INetMask interface" Url="html/ddd3ba48-73a7-72a4-52bb-884673bfaf2f.htm" />
+  <HelpKINode Title="INetMask interface">
+    <HelpKINode Title="about INetMask interface" Url="html/ddd3ba48-73a7-72a4-52bb-884673bfaf2f.htm" />
+    <HelpKINode Title="all members" Url="html/89b102c6-c601-55bc-1043-4cfe6d0e1578.htm" />
+    <HelpKINode Title="methods" Url="html/be5be8e6-6641-d7a6-8da7-2174eb705634.htm" />
+    <HelpKINode Title="properties" Url="html/f16b13a9-fd17-471c-4635-61b3994f19c4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="INetMask.AddressLength property" Url="html/f5b0be60-89d7-f625-daa8-95013b6ac3f5.htm" />
+  <HelpKINode Title="INetMask.Cidr property" Url="html/0b83211f-b0d5-5ebe-c47d-5e9f3be9415e.htm" />
+  <HelpKINode Title="INetMask.GetMaskBytes method" Url="html/63c23e64-c868-53ce-a110-39ebd0d7484d.htm" />
+  <HelpKINode Title="IPAddressExtensions class" Url="html/1b37d326-0851-3259-3abb-12ba3e39d44d.htm" />
+  <HelpKINode Title="IPAddressExtensions class" Url="html/894904f3-e937-ee6f-396f-ab526912fc44.htm" />
   <HelpKINode Title="IPAddressExtensions class" Url="html/cb9d117b-4a7e-ddc2-9f97-de28822d9de7.htm" />
   <HelpKINode Title="IPAddressExtensions class" Url="html/ea07f4e7-20bf-666c-be26-b6e298ef41fa.htm" />
   <HelpKINode Title="IPAddressExtensions class">
+    <HelpKINode Title="about IPAddressExtensions class" Url="html/1b37d326-0851-3259-3abb-12ba3e39d44d.htm" />
     <HelpKINode Title="about IPAddressExtensions class" Url="html/ea07f4e7-20bf-666c-be26-b6e298ef41fa.htm" />
+    <HelpKINode Title="all members" Url="html/894904f3-e937-ee6f-396f-ab526912fc44.htm" />
     <HelpKINode Title="all members" Url="html/cb9d117b-4a7e-ddc2-9f97-de28822d9de7.htm" />
+    <HelpKINode Title="methods" Url="html/14add23e-ca02-f086-0725-8ef4f9e05b53.htm" />
     <HelpKINode Title="methods" Url="html/e424a70e-b6c7-044b-027c-e947fd87f374.htm" />
   </HelpKINode>
+  <HelpKINode Title="IPAddressExtensions.GetBroadcastAddress method" Url="html/b1b3eac0-36da-edb9-28f0-9a0cbf117aa9.htm" />
+  <HelpKINode Title="IPAddressExtensions.GetHostIdentifier method" Url="html/0e21af95-5420-d890-90ae-673b800cda28.htm" />
+  <HelpKINode Title="IPAddressExtensions.GetNetworkPrefix method" Url="html/27147606-f938-5ee0-bcb3-3288c53917ce.htm" />
+  <HelpKINode Title="IPAddressExtensions.GetSiblings method" Url="html/9cb6146b-6d2a-6927-a013-2020742e0be1.htm" />
+  <HelpKINode Title="IPAddressExtensions.SendArpRequest method" Url="html/29a9de20-f79a-faf9-e524-e220daa78d78.htm" />
+  <HelpKINode Title="IPAddressExtensions.SendArpRequestAsync method" Url="html/ba93dac0-8f9b-ef7d-0eaa-04d0d5f2ccd6.htm" />
   <HelpKINode Title="IPAddressExtensions.SendWol method" Url="html/7a4a36e3-0761-6290-2574-b359ba4e8161.htm" />
   <HelpKINode Title="IPAddressExtensions.SendWolAsync method" Url="html/a73e391d-ee0e-3d81-84e3-bc37f10fbe0b.htm" />
   <HelpKINode Title="IPEndPointExtensions class" Url="html/56ec77f7-7248-f27a-e8ca-a95933267d36.htm" />
@@ -24,37 +98,43 @@
   </HelpKINode>
   <HelpKINode Title="IPEndPointExtensions.SendWol method" Url="html/65396b0a-83d1-d0b8-53f8-6569520d7602.htm" />
   <HelpKINode Title="IPEndPointExtensions.SendWolAsync method" Url="html/9d1ecdcc-d1da-b764-e225-ea07923a0b43.htm" />
-  <HelpKINode Title="Item property" Url="html/1ecc4886-c7bc-7603-a77d-34519088a394.htm" />
   <HelpKINode Title="Local enumeration member" Url="html/ed0ea8d7-0efe-02d9-8a79-85ecc650d689.htm" />
-  <HelpKINode Title="MacAddress class" Url="html/22d29e68-53ff-d66a-63dc-080024c279f4.htm" />
-  <HelpKINode Title="MacAddress class" Url="html/668dbf74-f245-adaf-42b2-82b981156108.htm" />
-  <HelpKINode Title="MacAddress class">
-    <HelpKINode Title="about MacAddress class" Url="html/668dbf74-f245-adaf-42b2-82b981156108.htm" />
-    <HelpKINode Title="all members" Url="html/22d29e68-53ff-d66a-63dc-080024c279f4.htm" />
-    <HelpKINode Title="constructor" Url="html/3fab5daf-1bb7-e515-1365-5adb11f3cb81.htm" />
-    <HelpKINode Title="methods" Url="html/afd8a135-a090-9f8a-c869-62cefeb1afcb.htm" />
-    <HelpKINode Title="properties" Url="html/54a550e2-54ed-30cf-f681-74ae2931b444.htm" />
-  </HelpKINode>
-  <HelpKINode Title="MacAddress.Address property" Url="html/00e284d6-3d67-081d-9832-d2b01ed4e220.htm" />
-  <HelpKINode Title="MacAddress.Broadcast property" Url="html/6b2edd96-2ca7-316e-f0cb-e9adf9c8d031.htm" />
-  <HelpKINode Title="MacAddress.Item property" Url="html/1ecc4886-c7bc-7603-a77d-34519088a394.htm" />
-  <HelpKINode Title="MacAddress.MacAddress constructor" Url="html/3fab5daf-1bb7-e515-1365-5adb11f3cb81.htm" />
-  <HelpKINode Title="MacAddress.Parse method" Url="html/16dd14ee-2837-a42e-360c-9b55ac913ace.htm" />
-  <HelpKINode Title="MacAddress.ToPhysicalAddress method" Url="html/6f31f64b-320e-fee2-3656-2c387215c943.htm" />
-  <HelpKINode Title="MacAddress.ToString method" Url="html/833c09a9-3228-d450-956a-dec8229d2775.htm" />
-  <HelpKINode Title="MacAddress.TryParse method" Url="html/73c4b998-113e-c366-e9f8-e0b656db4a1f.htm" />
-  <HelpKINode Title="MacAddressExtensions class" Url="html/1e099b6f-c8f9-0102-62e5-f8e5cc4be6ed.htm" />
-  <HelpKINode Title="MacAddressExtensions class" Url="html/845602a3-ecc8-9dcc-15db-014ee0e832b8.htm" />
-  <HelpKINode Title="MacAddressExtensions class">
-    <HelpKINode Title="about MacAddressExtensions class" Url="html/1e099b6f-c8f9-0102-62e5-f8e5cc4be6ed.htm" />
-    <HelpKINode Title="all members" Url="html/845602a3-ecc8-9dcc-15db-014ee0e832b8.htm" />
-    <HelpKINode Title="methods" Url="html/04c287f8-0d93-4083-b834-502e5acb257e.htm" />
-  </HelpKINode>
-  <HelpKINode Title="MacAddressExtensions.SendWol method" Url="html/b1d25775-f59a-a65b-9fdd-7bb3035273bf.htm" />
-  <HelpKINode Title="MacAddressExtensions.SendWolAsync method" Url="html/caeef704-2bba-c43a-32f2-bbe71c505175.htm" />
   <HelpKINode Title="Multicast enumeration member" Url="html/5929759b-b020-2212-baa8-f2f1b34ab0be.htm" />
-  <HelpKINode Title="Parse method" Url="html/16dd14ee-2837-a42e-360c-9b55ac913ace.htm" />
-  <HelpKINode Title="Password property" Url="html/fef2744c-b22b-219c-d930-8a2b4721dcfb.htm" />
+  <HelpKINode Title="NetMask class" Url="html/1b724f3a-9f0b-7841-0a1e-7158aaa8a495.htm" />
+  <HelpKINode Title="NetMask class" Url="html/c06537a6-b3e6-094e-6f75-d8dc22eb1882.htm" />
+  <HelpKINode Title="NetMask class">
+    <HelpKINode Title="about NetMask class" Url="html/1b724f3a-9f0b-7841-0a1e-7158aaa8a495.htm" />
+    <HelpKINode Title="all members" Url="html/c06537a6-b3e6-094e-6f75-d8dc22eb1882.htm" />
+    <HelpKINode Title="constructor" Url="html/e05a9787-423b-2875-0c2a-65cecaacbbee.htm" />
+    <HelpKINode Title="methods" Url="html/9638e8dd-1478-bb08-54ce-77be40675dbe.htm" />
+    <HelpKINode Title="operators" Url="html/57372840-7bca-9042-3160-3aebd002e46e.htm" />
+    <HelpKINode Title="properties" Url="html/6f6e9080-21d5-3c7a-c97c-314402cf5099.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NetMask.Abbreviate method" Url="html/8d342161-f2bc-1e25-c32c-88ab2a4b8dc0.htm" />
+  <HelpKINode Title="NetMask.AddressLength property" Url="html/ebd650eb-5552-f5d5-948b-0990c300c556.htm" />
+  <HelpKINode Title="NetMask.BitwiseAnd method" Url="html/285e08a9-5a5d-bc9f-e51b-6314ad1c79aa.htm" />
+  <HelpKINode Title="NetMask.BitwiseAnd operator" Url="html/4e6377be-649d-b4e5-1d18-4ec272891fc9.htm" />
+  <HelpKINode Title="NetMask.BitwiseOr method" Url="html/a4227ebe-d8a9-9401-bb3d-6047108de2b4.htm" />
+  <HelpKINode Title="NetMask.BitwiseOr operator" Url="html/416c3e83-67a7-06e3-0fe4-7a6ebb9fd176.htm" />
+  <HelpKINode Title="NetMask.Cidr property" Url="html/1cbdcc75-5fb1-ce2e-6d96-1e7826959c2f.htm" />
+  <HelpKINode Title="NetMask.Empty property" Url="html/b9e1d5f7-ee4f-ccc9-e9f4-07bc4a9c7a8d.htm" />
+  <HelpKINode Title="NetMask.Equality operator" Url="html/75383a14-7d3d-600e-3a4f-27e74a7f20a6.htm" />
+  <HelpKINode Title="NetMask.Equals method" Url="html/e7fca351-0831-c204-7449-9f38447b501e.htm" />
+  <HelpKINode Title="NetMask.Extend method" Url="html/c574b1a9-c4df-4ea4-4c7b-b30e13e117ba.htm" />
+  <HelpKINode Title="NetMask.GetHashCode method" Url="html/69383bcd-1047-cbac-b832-d468cc2d70cf.htm" />
+  <HelpKINode Title="NetMask.GetIsValidNetMask method" Url="html/019dcbdb-f670-ab37-06fc-b9292cf3275f.htm" />
+  <HelpKINode Title="NetMask.GetMaskBytes method" Url="html/2607bcac-c646-edad-ecf3-c8bc397057c0.htm" />
+  <HelpKINode Title="NetMask.Inequality operator" Url="html/8daf588e-7ae3-6a36-0d05-6e63ab436e19.htm" />
+  <HelpKINode Title="NetMask.NetMask constructor" Url="html/e05a9787-423b-2875-0c2a-65cecaacbbee.htm" />
+  <HelpKINode Title="NetMask.ToString method" Url="html/af1ecf03-2b2a-a5bf-1b9c-b0ecbf6f9b58.htm" />
+  <HelpKINode Title="NetMaskExtensions class" Url="html/238ec56c-a239-b049-857c-073c961c53e7.htm" />
+  <HelpKINode Title="NetMaskExtensions class" Url="html/dbf24d9c-554c-0438-3025-fd7179f45e58.htm" />
+  <HelpKINode Title="NetMaskExtensions class">
+    <HelpKINode Title="about NetMaskExtensions class" Url="html/238ec56c-a239-b049-857c-073c961c53e7.htm" />
+    <HelpKINode Title="all members" Url="html/dbf24d9c-554c-0438-3025-fd7179f45e58.htm" />
+    <HelpKINode Title="methods" Url="html/f72e94a0-a3a5-c062-737f-c6ce8ada69f7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NetMaskExtensions.GetSiblingCount method" Url="html/6dc2f9b2-42d4-e61a-eeb3-8838cbc2d7d2.htm" />
   <HelpKINode Title="PhysicalAddressAdministrator enumeration" Url="html/ed0ea8d7-0efe-02d9-8a79-85ecc650d689.htm" />
   <HelpKINode Title="PhysicalAddressExtensions class" Url="html/1db417ea-901d-cdda-6d01-4c5f83691a03.htm" />
   <HelpKINode Title="PhysicalAddressExtensions class" Url="html/6f0a64df-894d-215f-f0bb-673dcaa05252.htm" />
@@ -75,13 +155,16 @@
     <HelpKINode Title="all members" Url="html/8c7b3dd9-d747-83a2-dad8-c24c6f9f5f5e.htm" />
     <HelpKINode Title="constructor" Url="html/2504431a-c0dd-5ac9-c1be-2a91bb413025.htm" />
     <HelpKINode Title="methods" Url="html/db22c26a-c8db-cfdd-6b9d-eae759449226.htm" />
-    <HelpKINode Title="properties" Url="html/a11da478-34ca-ea01-f85e-403279dcf55c.htm" />
   </HelpKINode>
-  <HelpKINode Title="SecureOnPassword.Password property" Url="html/fef2744c-b22b-219c-d930-8a2b4721dcfb.htm" />
+  <HelpKINode Title="SecureOnPassword.GetPasswordBytes method" Url="html/abd2e393-eddd-af76-882b-00ca0f32e397.htm" />
   <HelpKINode Title="SecureOnPassword.SecureOnPassword constructor" Url="html/2504431a-c0dd-5ac9-c1be-2a91bb413025.htm" />
-  <HelpKINode Title="SecureOnPassword.ToString method" Url="html/d82b556a-67c8-f6d4-b2e1-d8260318e400.htm" />
+  <HelpKINode Title="SecureOnPassword.ToString method" Url="html/0de76de7-6e59-ca78-fd52-821246de5eaa.htm" />
   <HelpKINode Title="Send method" Url="html/51080f75-9899-2699-4a40-3ff8c8b1766c.htm" />
+  <HelpKINode Title="Send method" Url="html/dc337389-8de7-edcf-5a43-db7b28f109e0.htm" />
+  <HelpKINode Title="SendArpRequest method" Url="html/29a9de20-f79a-faf9-e524-e220daa78d78.htm" />
+  <HelpKINode Title="SendArpRequestAsync method" Url="html/ba93dac0-8f9b-ef7d-0eaa-04d0d5f2ccd6.htm" />
   <HelpKINode Title="SendAsync method" Url="html/6c4a0437-00cf-891c-5236-b963a6a6e4eb.htm" />
+  <HelpKINode Title="SendAsync method" Url="html/6c522131-8ba0-d4b5-3cac-dea6bf09a50e.htm" />
   <HelpKINode Title="SendWol class" Url="html/7d1eaf2b-23bb-d1d7-bc98-c3f3ad493033.htm" />
   <HelpKINode Title="SendWol class" Url="html/9e744c58-1501-1e79-4ed8-626106577e5b.htm" />
   <HelpKINode Title="SendWol class">
@@ -92,22 +175,21 @@
   <HelpKINode Title="SendWol method" Url="html/65396b0a-83d1-d0b8-53f8-6569520d7602.htm" />
   <HelpKINode Title="SendWol method" Url="html/7a4a36e3-0761-6290-2574-b359ba4e8161.htm" />
   <HelpKINode Title="SendWol method" Url="html/8a52e846-c43f-8fcf-7311-e2ab8771a979.htm" />
-  <HelpKINode Title="SendWol method" Url="html/b1d25775-f59a-a65b-9fdd-7bb3035273bf.htm" />
   <HelpKINode Title="SendWol.Send method" Url="html/51080f75-9899-2699-4a40-3ff8c8b1766c.htm" />
   <HelpKINode Title="SendWol.SendAsync method" Url="html/6c4a0437-00cf-891c-5236-b963a6a6e4eb.htm" />
   <HelpKINode Title="SendWolAsync method" Url="html/895cbb85-12cb-7470-c61d-3443bdef1638.htm" />
   <HelpKINode Title="SendWolAsync method" Url="html/9d1ecdcc-d1da-b764-e225-ea07923a0b43.htm" />
   <HelpKINode Title="SendWolAsync method" Url="html/a73e391d-ee0e-3d81-84e3-bc37f10fbe0b.htm" />
-  <HelpKINode Title="SendWolAsync method" Url="html/caeef704-2bba-c43a-32f2-bbe71c505175.htm" />
+  <HelpKINode Title="SiblingOptions enumeration" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
   <HelpKINode Title="System.Net namespace" Url="html/d05d4a58-8dbd-7f5c-16ec-cd1d0dfb4bc8.htm" />
+  <HelpKINode Title="System.Net.ArpRequest class" Url="html/5260df32-55b3-a3f0-6aaa-14cb1fd255ed.htm" />
+  <HelpKINode Title="System.Net.ArpRequest class" Url="html/cc1cf95f-cfbb-fff2-ef32-df8a1d8f8061.htm" />
+  <HelpKINode Title="System.Net.ArpRequestResult class" Url="html/6a4ef601-431a-a6c5-140f-90a701243a44.htm" />
+  <HelpKINode Title="System.Net.ArpRequestResult class" Url="html/8d99f77f-83e2-9274-d706-789439cfb6ca.htm" />
   <HelpKINode Title="System.Net.IPAddressExtensions class" Url="html/cb9d117b-4a7e-ddc2-9f97-de28822d9de7.htm" />
   <HelpKINode Title="System.Net.IPAddressExtensions class" Url="html/ea07f4e7-20bf-666c-be26-b6e298ef41fa.htm" />
   <HelpKINode Title="System.Net.IPEndPointExtensions class" Url="html/56ec77f7-7248-f27a-e8ca-a95933267d36.htm" />
   <HelpKINode Title="System.Net.IPEndPointExtensions class" Url="html/cc1aff39-411a-b889-0f2f-7b1c3971f7a9.htm" />
-  <HelpKINode Title="System.Net.MacAddress class" Url="html/22d29e68-53ff-d66a-63dc-080024c279f4.htm" />
-  <HelpKINode Title="System.Net.MacAddress class" Url="html/668dbf74-f245-adaf-42b2-82b981156108.htm" />
-  <HelpKINode Title="System.Net.MacAddressExtensions class" Url="html/1e099b6f-c8f9-0102-62e5-f8e5cc4be6ed.htm" />
-  <HelpKINode Title="System.Net.MacAddressExtensions class" Url="html/845602a3-ecc8-9dcc-15db-014ee0e832b8.htm" />
   <HelpKINode Title="System.Net.PhysicalAddressAdministrator enumeration" Url="html/ed0ea8d7-0efe-02d9-8a79-85ecc650d689.htm" />
   <HelpKINode Title="System.Net.PhysicalAddressExtensions class" Url="html/1db417ea-901d-cdda-6d01-4c5f83691a03.htm" />
   <HelpKINode Title="System.Net.PhysicalAddressExtensions class" Url="html/6f0a64df-894d-215f-f0bb-673dcaa05252.htm" />
@@ -116,9 +198,18 @@
   <HelpKINode Title="System.Net.SecureOnPassword class" Url="html/b76a349d-bfb9-fb2e-a07e-de2421e7c72f.htm" />
   <HelpKINode Title="System.Net.SendWol class" Url="html/7d1eaf2b-23bb-d1d7-bc98-c3f3ad493033.htm" />
   <HelpKINode Title="System.Net.SendWol class" Url="html/9e744c58-1501-1e79-4ed8-626106577e5b.htm" />
-  <HelpKINode Title="ToPhysicalAddress method" Url="html/6f31f64b-320e-fee2-3656-2c387215c943.htm" />
-  <HelpKINode Title="ToString method" Url="html/833c09a9-3228-d450-956a-dec8229d2775.htm" />
-  <HelpKINode Title="ToString method" Url="html/d82b556a-67c8-f6d4-b2e1-d8260318e400.htm" />
-  <HelpKINode Title="TryParse method" Url="html/73c4b998-113e-c366-e9f8-e0b656db4a1f.htm" />
+  <HelpKINode Title="System.Net.Topology namespace" Url="html/c7fd04ad-ce89-8487-a3a1-a7897a6048c2.htm" />
+  <HelpKINode Title="System.Net.Topology.INetMask interface" Url="html/89b102c6-c601-55bc-1043-4cfe6d0e1578.htm" />
+  <HelpKINode Title="System.Net.Topology.INetMask interface" Url="html/ddd3ba48-73a7-72a4-52bb-884673bfaf2f.htm" />
+  <HelpKINode Title="System.Net.Topology.IPAddressExtensions class" Url="html/1b37d326-0851-3259-3abb-12ba3e39d44d.htm" />
+  <HelpKINode Title="System.Net.Topology.IPAddressExtensions class" Url="html/894904f3-e937-ee6f-396f-ab526912fc44.htm" />
+  <HelpKINode Title="System.Net.Topology.NetMask class" Url="html/1b724f3a-9f0b-7841-0a1e-7158aaa8a495.htm" />
+  <HelpKINode Title="System.Net.Topology.NetMask class" Url="html/c06537a6-b3e6-094e-6f75-d8dc22eb1882.htm" />
+  <HelpKINode Title="System.Net.Topology.NetMaskExtensions class" Url="html/238ec56c-a239-b049-857c-073c961c53e7.htm" />
+  <HelpKINode Title="System.Net.Topology.NetMaskExtensions class" Url="html/dbf24d9c-554c-0438-3025-fd7179f45e58.htm" />
+  <HelpKINode Title="System.Net.Topology.SiblingOptions enumeration" Url="html/21de6af2-5ae6-84af-f079-181a6237c7d7.htm" />
+  <HelpKINode Title="ToString method" Url="html/0de76de7-6e59-ca78-fd52-821246de5eaa.htm" />
+  <HelpKINode Title="ToString method" Url="html/89174d3d-7d8b-a526-09b8-9f7506f90385.htm" />
+  <HelpKINode Title="ToString method" Url="html/af1ecf03-2b2a-a5bf-1b9c-b0ecbf6f9b58.htm" />
   <HelpKINode Title="Unicast enumeration member" Url="html/5929759b-b020-2212-baa8-f2f1b34ab0be.htm" />
 </HelpKI>

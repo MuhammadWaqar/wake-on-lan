@@ -5,7 +5,8 @@
     </assembly>
     <members>
         <member name="T:System.Net.ArpRequest">
-            <summary>Stellt Methoden für das Senden von Anfragen über das ARP-Protokoll bereit.</summary>
+            <summary>Provides methods for sending requests using the ARP protocol.</summary>
+            <summary xml:lang="de">Stellt Methoden für das Senden von Anfragen über das ARP-Protokoll bereit.</summary>
         </member>
         <member name="M:System.Net.ArpRequest.Send(System.Net.IPAddress)">
             <summary>

@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace System.Net
 {
-    /// <summary>Stellt Methoden für das Senden von Anfragen über das ARP-Protokoll bereit.</summary>
+    /// <summary>Provides methods for sending requests using the ARP protocol.</summary>
+    /// <summary xml:lang="de">Stellt Methoden für das Senden von Anfragen über das ARP-Protokoll bereit.</summary>
     public static class ArpRequest
     {
         /// <summary>

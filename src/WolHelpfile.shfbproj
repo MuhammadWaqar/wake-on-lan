@@ -17,7 +17,7 @@
     <!-- SHFB properties -->
     <OutputPath>Documentation\WOL45\</OutputPath>
     <HtmlHelpName>Documentation</HtmlHelpName>
-    <Language>de-DE</Language>
+    <Language>en-US</Language>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
     <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
     <IndentHtml>False</IndentHtml>
@@ -27,15 +27,15 @@
     <CppCommentsFixup>False</CppCommentsFixup>
     <CleanIntermediates>True</CleanIntermediates>
     <DocumentationSources>
-      <DocumentationSource sourceFile="WOL\bin\ReleaseTAP\WakeOnLan.dll" xmlns="" />
-<DocumentationSource sourceFile="WOL\bin\ReleaseTAP\WakeOnLan.xml" xmlns="" /></DocumentationSources>
+      <DocumentationSource sourceFile="WOL\bin\ReleaseFW451\WakeOnLan.dll" />
+<DocumentationSource sourceFile="WOL\bin\ReleaseFW451\WakeOnLan.xml" /></DocumentationSources>
     <SyntaxFilters>CSharp, VisualBasic</SyntaxFilters>
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <RootNamespaceContainer>False</RootNamespaceContainer>
     <PresentationStyle>VS2010</PresentationStyle>
     <Preliminary>False</Preliminary>
     <NamingMethod>Guid</NamingMethod>
-    <HelpTitle>WakeOnLanLibrary Dokumentation</HelpTitle>
+    <HelpTitle>WakeOnLanLibrary Documentation</HelpTitle>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <FeedbackEMailLinkText>Feedback</FeedbackEMailLinkText>
     <FeedbackEMailAddress>nikeee%40holz.nu</FeedbackEMailAddress>
@@ -45,27 +45,27 @@
     <ComponentConfigurations>
       <ComponentConfig id="Cached MSDN URL References" enabled="True" xmlns="">
         <component id="Cached MSDN URL References" type="SandcastleBuilder.Components.CachedResolveReferenceLinksComponent" assembly="{@SHFBFolder}SandcastleBuilder.Components.dll" locale="{@Locale}" linkTarget="{@SdkLinkTarget}">
-<helpOutput format="HtmlHelp1">
-  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
-  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@HtmlSdkLinkType}" />
-  <targets files="reflection.xml" type="Local" />
-</helpOutput>
-<helpOutput format="MSHelp2">
-  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
-  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelp2SdkLinkType}" />
-  <targets files="reflection.xml" type="Index" />
-</helpOutput>
-<helpOutput format="MSHelpViewer">
-  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
-  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelpViewerSdkLinkType}" />
-  <targets files="reflection.xml" type="Id" />
-</helpOutput>
-<helpOutput format="Website">
-  <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
-  <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@WebsiteSdkLinkType}" />
-  <targets files="reflection.xml" type="Local" />
-</helpOutput>
-</component>
+          <helpOutput format="HtmlHelp1">
+            <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+            <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@HtmlSdkLinkType}" />
+            <targets files="reflection.xml" type="Local" />
+          </helpOutput>
+          <helpOutput format="MSHelp2">
+            <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+            <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelp2SdkLinkType}" />
+            <targets files="reflection.xml" type="Index" />
+          </helpOutput>
+          <helpOutput format="MSHelpViewer">
+            <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+            <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@MSHelpViewerSdkLinkType}" />
+            <targets files="reflection.xml" type="Id" />
+          </helpOutput>
+          <helpOutput format="Website">
+            <cache filename="{@LocalDataFolder}Cache\MsdnUrl.cache" />
+            <targets base="{@SandcastlePath}Data\Reflection" recurse="true" files="*.xml" type="{@WebsiteSdkLinkType}" />
+            <targets files="reflection.xml" type="Local" />
+          </helpOutput>
+        </component>
       </ComponentConfig>
     </ComponentConfigurations>
     <NamespaceSummaries>
