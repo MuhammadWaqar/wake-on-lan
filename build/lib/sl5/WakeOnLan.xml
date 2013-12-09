@@ -183,6 +183,60 @@
             <exception cref="T:System.ArgumentNullException">password ist null.</exception>
             <exception cref="T:System.Net.Sockets.SocketException">Fehler beim Zugriff auf den Socket. Weitere Informationen finden Sie im Abschnitt "Hinweise".</exception>
         </member>
+        <member name="M:System.Net.SendWol.SendAsync(System.Net.IPEndPoint,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Sendet ein Wake-On-LAN-Signal an einen Client.
+            </summary>
+            <param name="target">Der Ziel-IPEndPoint.</param>
+            <param name="mac0">Erstes MAC-Adress-Byte</param>
+            <param name="mac1">Zweites MAC-Adress-Byte</param>
+            <param name="mac2">Drittes MAC-Adress-Byte</param>
+            <param name="mac3">Viertes MAC-Adress-Byte</param>
+            <param name="mac4">Fünftes MAC-Adress-Byte</param>
+            <param name="mac5">Sechstes MAC-Adress-Byte</param>
+            <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
+        </member>
+        <member name="M:System.Net.SendWol.SendAsync(System.Net.IPEndPoint,System.Byte[])">
+             <summary>
+             Sendet ein Wake-On-LAN-Signal an einen Client.
+             </summary>
+             <param name="target">Der Ziel-IPEndPoint.</param>
+             <param name="macAddress">Die MAC-Adresse des Clients.</param>
+            <exception cref="T:System.ArgumentException">Die Länge des <see cref="T:System.Byte"/>-Arrays macAddress ist nicht 6.</exception>
+            <exception cref="T:System.ArgumentNullException">macAddress ist null.</exception>
+             <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
+        </member>
+        <member name="M:System.Net.SendWol.SendAsync(System.Net.IPEndPoint,System.Byte[],System.Net.SecureOnPassword)">
+            <summary>
+            Sendet ein Wake-On-LAN-Signal an einen Client.
+            </summary>
+            <param name="target">Der Ziel-IPEndPoint.</param>
+            <param name="macAddress">Die MAC-Adresse des Clients.</param>
+            <param name="password">Das SecureOn-Passwort des Clients.</param>
+            <exception cref="T:System.ArgumentNullException">macAddress ist null.</exception>
+            <exception cref="T:System.ArgumentNullException">password ist null.</exception>
+            <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
+        </member>
+        <member name="M:System.Net.SendWol.SendAsync(System.Net.IPEndPoint,System.Net.PhysicalAddress)">
+             <summary>
+             Sendet ein Wake-On-LAN-Signal an einen Client.
+             </summary>
+             <param name="target">Der Ziel-IPEndPoint.</param>
+             <param name="macAddress">Die MAC-Adresse des Clients.</param>
+            <exception cref="T:System.ArgumentNullException">macAddress ist null.</exception>
+             <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
+        </member>
+        <member name="M:System.Net.SendWol.SendAsync(System.Net.IPEndPoint,System.Net.PhysicalAddress,System.Net.SecureOnPassword)">
+            <summary>
+            Sendet ein Wake-On-LAN-Signal an einen Client.
+            </summary>
+            <param name="target">Der Ziel-IPEndPoint.</param>
+            <param name="macAddress">Die MAC-Adresse des Clients.</param>
+            <param name="password">Das SecureOn-Passwort des Clients.</param>
+            <exception cref="T:System.ArgumentNullException">macAddress ist null.</exception>
+            <exception cref="T:System.ArgumentNullException">password ist null.</exception>
+            <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
+        </member>
         <member name="M:System.Net.SendWol.GetWolPacket(System.Byte[])">
             <exception cref="T:System.ArgumentException">Die Länge des <see cref="T:System.Byte"/>-Arrays ist nicht 6.</exception>
             <exception cref="T:System.ArgumentNullException">macAddress ist null.</exception>

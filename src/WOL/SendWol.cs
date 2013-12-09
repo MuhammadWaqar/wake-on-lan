@@ -1,4 +1,4 @@
-﻿#if NET45
+﻿#if NET45 || TAP
 using System.Threading.Tasks;
 #endif
 
@@ -160,7 +160,7 @@ namespace System.Net
 
         #endregion
         #region TAP
-#if NET45
+#if NET45 || TAP
 
         /// <summary>
         /// Sendet ein Wake-On-LAN-Signal an einen Client.
@@ -264,11 +264,20 @@ namespace System.Net
             return SendPacketAsync(target, p);
         }
 
+#if SILVERLIGHT
+        private static Task SendPacketAsync(IPEndPoint target, byte[] packet)
+        {
+            SendPacket(target, packet); // The silverlight port auf the UdpClient is async anyways
+            // So we use the normal send method and return an empty task
+            return Task.Factory.StartNew(() => { });
+        }
+#else
         private static Task SendPacketAsync(IPEndPoint target, byte[] packet)
         {
             using (var cl = new UdpClient())
                 return Task.Factory.FromAsync<byte[], int, int>(cl.BeginSend, cl.EndSend, packet, packet.Length, target);
         }
+#endif
 
 #if NET35
 #if INCLUDEOBSOLETE

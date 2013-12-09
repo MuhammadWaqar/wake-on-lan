@@ -40,7 +40,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\ReleaseSL5\</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;SL5</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;TAP;SL5</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>

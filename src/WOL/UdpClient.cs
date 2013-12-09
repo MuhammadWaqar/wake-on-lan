@@ -3,6 +3,10 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
+#if TAP
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 
 namespace System.Net.Sockets
@@ -28,13 +32,27 @@ namespace System.Net.Sockets
             CheckDisposed();
             if (dgram == null)
                 throw new ArgumentNullException("dgram");
-
             var asc = new SocketAsyncEventArgs();
             asc.SetBuffer(dgram, 0, dgram.Length);
             asc.UserToken = _socket;
             asc.RemoteEndPoint = endPoint;
             _socket.SendAsync(asc);
         }
+
+#if TAP
+        public Task SendAsync(byte[] dgram, int bytes, IPEndPoint endPoint)
+        {
+            var tcs = new TaskCompletionSource<bool>();
+            var asc = new SocketAsyncEventArgs();
+            asc.SetBuffer(dgram, 0, dgram.Length);
+            asc.UserToken = _socket;
+            asc.RemoteEndPoint = endPoint;
+            asc.Completed += (s, e) => tcs.SetResult(true);
+            if(_socket.SendAsync(asc))
+                tcs.SetResult(true);            
+            return tcs.Task;
+        }
+#endif
 
         public void Close()
         {
