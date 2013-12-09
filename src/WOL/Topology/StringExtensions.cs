@@ -4,7 +4,12 @@ namespace System.Net.Topology
     internal static class StringExtensions
     {
 #if SILVERLIGHT
-
+        internal static string Reverse(this string input)
+        {
+            char[] charArray = input.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
 #else
         internal static unsafe string Reverse(this string input)
         {
