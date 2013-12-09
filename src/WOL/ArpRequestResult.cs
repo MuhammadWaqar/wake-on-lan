@@ -1,3 +1,8 @@
+#if SILVERLIGHT || WINDOWS_PHONE
+#define DISALLOW_PINVOKES
+#endif
+
+#if !DISALLOW_PINVOKES
 using System.Net.NetworkInformation;
 using System.Text;
 
@@ -53,3 +58,4 @@ namespace System.Net
         }
     }
 }
+#endif

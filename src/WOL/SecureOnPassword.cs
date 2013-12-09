@@ -3,7 +3,9 @@
     /// <summary>
     /// Stellt ein SecureOn-Passwort bereit.
     /// </summary>
+#if !SILVERLIGHT && !WINDOWS_PHONE
     [Serializable]
+#endif
     public sealed class SecureOnPassword
     {
         private readonly byte[] _password;
