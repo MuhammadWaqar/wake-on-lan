@@ -27,7 +27,7 @@ namespace System.Net
         /// <exception cref="System.Net.Sockets.SocketException">Fehler beim Zugriff auf den Socket. Weitere Informationen finden Sie im Abschnitt "Hinweise".</exception>
         public static void Send(IPEndPoint target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5)
         {
-            Send(target, new[] {mac0, mac1, mac2, mac3, mac4, mac5});
+            Send(target, new[] { mac0, mac1, mac2, mac3, mac4, mac5 });
         }
 
         /// <summary>
@@ -267,14 +267,16 @@ namespace System.Net
 #if SILVERLIGHT
         private static Task SendPacketAsync(IPEndPoint target, byte[] packet)
         {
-            using (var cl = new UdpClient())
-                return cl.SendAsync(packet, packet.Length, target);
+            var cl = new UdpClient();
+            return cl.SendAsync(packet, packet.Length, target).ContinueWith((Task t) => cl.Close());
         }
 #else
         private static Task SendPacketAsync(IPEndPoint target, byte[] packet)
         {
-            using (var cl = new UdpClient())
-                return Task.Factory.FromAsync<byte[], int, int>(cl.BeginSend, cl.EndSend, packet, packet.Length, target);
+            //using (var cl = new UdpClient())
+            //     return Task.Factory.FromAsync<byte[], int, int>(cl.BeginSend, cl.EndSend, packet, packet.Length, target);
+            var cl = new UdpClient();
+            return cl.SendAsync(packet, packet.Length, target).ContinueWith((Task t) => cl.Close());
         }
 #endif
 
