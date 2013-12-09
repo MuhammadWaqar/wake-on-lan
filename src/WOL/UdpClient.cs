@@ -42,14 +42,16 @@ namespace System.Net.Sockets
 #if TAP
         public Task SendAsync(byte[] dgram, int bytes, IPEndPoint endPoint)
         {
+            // Needs test
             var tcs = new TaskCompletionSource<bool>();
-            var asc = new SocketAsyncEventArgs();
+            var asc = new SocketAsyncEventArgs {
+                UserToken = _socket,
+                RemoteEndPoint = endPoint
+            };
             asc.SetBuffer(dgram, 0, dgram.Length);
-            asc.UserToken = _socket;
-            asc.RemoteEndPoint = endPoint;
             asc.Completed += (s, e) => tcs.SetResult(true);
-            if(_socket.SendAsync(asc))
-                tcs.SetResult(true);            
+            if (_socket.SendAsync(asc))
+                tcs.SetResult(true);
             return tcs.Task;
         }
 #endif
