@@ -1,4 +1,4 @@
-﻿#if NET35
+﻿#if NET35 || SILVERLIGHT
 
 #if NET45
 using System.Threading.Tasks;

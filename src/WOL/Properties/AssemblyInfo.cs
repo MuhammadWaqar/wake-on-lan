@@ -16,6 +16,6 @@ using System;
 [assembly: CLSCompliant(true)]
 [assembly: Guid("4e7980d5-1b85-4f27-a655-aa3a06b5c673")]
 
-[assembly: AssemblyVersion("1.6.*")]
-[assembly: AssemblyFileVersion("1.6.0.0")]
+[assembly: AssemblyVersion("1.7.*")]
+[assembly: AssemblyFileVersion("1.7.0.0")]
 [assembly: InternalsVisibleTo("WakeOnLan.Testing")]
