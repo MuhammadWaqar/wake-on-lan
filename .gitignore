@@ -106,6 +106,7 @@ Thumbs.db
 !build/lib/net40/*.dll
 !build/lib/net45/*.dll
 !build/lib/net451/*.dll
+!build/lib/sl5/*.dll
 
 *.sln.DotSettings.user
 .gitattributes
