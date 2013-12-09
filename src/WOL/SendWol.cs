@@ -273,8 +273,6 @@ namespace System.Net
 #else
         private static Task SendPacketAsync(IPEndPoint target, byte[] packet)
         {
-            //using (var cl = new UdpClient())
-            //     return Task.Factory.FromAsync<byte[], int, int>(cl.BeginSend, cl.EndSend, packet, packet.Length, target);
             var cl = new UdpClient();
             return cl.SendAsync(packet, packet.Length, target).ContinueWith((Task t) => cl.Close());
         }
