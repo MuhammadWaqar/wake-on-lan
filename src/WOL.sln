@@ -27,6 +27,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WakeOnLan451", "WOL\WakeOnL
 		{3BC8E839-0028-484B-8D91-21EF31FA3D98} = {3BC8E839-0028-484B-8D91-21EF31FA3D98}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WakeOnLanSL5", "WOL\WakeOnLanSL5.csproj", "{6B770B5F-A418-4086-AF04-2980BE5B5DA2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{49DDF71A-F533-431E-AD73-A4678B8A218B} = {49DDF71A-F533-431E-AD73-A4678B8A218B}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +112,15 @@ Global
 		{49DDF71A-F533-431E-AD73-A4678B8A218B}.ReleaseDebugSymbols|Any CPU.Build.0 = ReleaseDebugSymbols|Any CPU
 		{49DDF71A-F533-431E-AD73-A4678B8A218B}.ReleaseDebugSymbols|x86.ActiveCfg = ReleaseDebugSymbols|x86
 		{49DDF71A-F533-431E-AD73-A4678B8A218B}.ReleaseDebugSymbols|x86.Build.0 = ReleaseDebugSymbols|x86
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.Release|x86.ActiveCfg = Release|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.ReleaseDebugSymbols|Any CPU.ActiveCfg = Release|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.ReleaseDebugSymbols|Any CPU.Build.0 = Release|Any CPU
+		{6B770B5F-A418-4086-AF04-2980BE5B5DA2}.ReleaseDebugSymbols|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

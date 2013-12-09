@@ -3,6 +3,9 @@ namespace System.Net.Topology
 {
     internal static class StringExtensions
     {
+#if SILVERLIGHT
+
+#else
         internal static unsafe string Reverse(this string input)
         {
             int len = input.Length;
@@ -25,5 +28,6 @@ namespace System.Net.Topology
             // at the end of the string (no guarantee of null terminator).
             return new string(reversed, 0, len);
         }
+#endif
     }
 }
