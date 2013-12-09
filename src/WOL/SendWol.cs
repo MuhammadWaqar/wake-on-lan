@@ -267,9 +267,8 @@ namespace System.Net
 #if SILVERLIGHT
         private static Task SendPacketAsync(IPEndPoint target, byte[] packet)
         {
-            SendPacket(target, packet); // The silverlight port auf the UdpClient is async anyways
-            // So we use the normal send method and return an empty task
-            return Task.Factory.StartNew(() => { });
+            using (var cl = new UdpClient())
+                return cl.SendAsync(packet, packet.Length, target);
         }
 #else
         private static Task SendPacketAsync(IPEndPoint target, byte[] packet)
