@@ -29,7 +29,11 @@ namespace System.Net
 
             if (res == 0)
                 return new ArpRequestResult(new PhysicalAddress(addr));
+#if SILVERLIGHT
+            return new ArpRequestResult(new Exception("Win32 Error: " + res));
+#else
             return new ArpRequestResult(new Win32Exception(res));
+#endif
         }
 
 #if NET45

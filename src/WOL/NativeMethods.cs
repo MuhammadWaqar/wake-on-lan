@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿#if !NOPINVOKE
+
+using System.Runtime.InteropServices;
 using System.Security;
 
 namespace System.Net
@@ -12,3 +14,5 @@ namespace System.Net
         internal static extern int SendARP(int destinationIp, int sourceIp, byte[] macAddress, ref int physicalAddrLength);
     }
 }
+
+#endif
