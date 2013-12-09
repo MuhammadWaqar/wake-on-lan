@@ -64,6 +64,7 @@
     <Compile Include="IPEndPointExtensions.cs" />
     <Compile Include="Localization.cs" />
     <Compile Include="NativeMethods.cs" />
+    <Compile Include="PhysicalAddress.cs" />
     <Compile Include="Topology\ByteArrayExtensions.cs" />
     <Compile Include="Topology\ByteExtensions.cs" />
     <Compile Include="Topology\IPAddressExtensions.cs" />
@@ -81,7 +82,7 @@
     <Compile Include="Topology\StringExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
-    <PropertyGroup>
+  <PropertyGroup>
     <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)..\build\lib\sl5\$(TargetFileName)"
 copy "$(TargetDir)$(TargetName).XML" "$(SolutionDir)..\build\lib\sl5\$(TargetName).xml"</PostBuildEvent>
   </PropertyGroup>

@@ -3,7 +3,9 @@
     /// <summary>
     /// Stellt ein SecureOn-Passwort bereit.
     /// </summary>
+#if !SILVERLIGHT // Not serializable in Siverlight version
     [Serializable]
+#endif
     public sealed class SecureOnPassword
     {
         private readonly byte[] _password;
@@ -33,6 +35,16 @@
             return buffer;
         }
 
+#if SILVERLIGHT
+        /// <summary>
+        /// Initialisiert eine neue Instanz der System.Net.SecureOnPassword-Klasse mit dem angegebenen Passwort.
+        /// </summary>
+        /// <param name="password">Das Passwort als Zeichenfolge.</param>
+        /// <remarks >Verwendet System.Text.Encoding.UTF8 als Kodierung.</remarks>
+        public SecureOnPassword(string password)
+            : this(password, Text.Encoding.UTF8)
+        { }
+#else
         /// <summary>
         /// Initialisiert eine neue Instanz der System.Net.SecureOnPassword-Klasse mit dem angegebenen Passwort.
         /// </summary>
@@ -41,6 +53,7 @@
         public SecureOnPassword(string password)
             : this(password, Text.Encoding.Default)
         { }
+#endif
 
 
         /// <summary>
