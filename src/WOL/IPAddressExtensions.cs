@@ -3,6 +3,9 @@
 #if NET45
 using System.Threading.Tasks;
 #endif
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
 
 using System.Net.NetworkInformation;
 
@@ -29,6 +32,10 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5, int port)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentException>(port >= 0);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, port), mac0, mac1, mac2, mac3, mac4, mac5);
         }
 
@@ -46,6 +53,10 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentException>(DefaultWolPort >= 0);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, DefaultWolPort), mac0, mac1, mac2, mac3, mac4, mac5);
         }
 
@@ -61,6 +72,12 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, byte[] macAddress, int port)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+            Contract.Requires<ArgumentException>(port >= 0);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, port), macAddress);
         }
 
@@ -78,6 +95,13 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, byte[] macAddress, int port, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+            Contract.Requires<ArgumentException>(port >= 0);
+            Contract.Requires<ArgumentNullException>(password != null);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, port), macAddress, password);
         }
 
@@ -92,6 +116,11 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, byte[] macAddress)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, DefaultWolPort), macAddress);
         }
 
@@ -108,6 +137,12 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, byte[] macAddress, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+            Contract.Requires<ArgumentNullException>(password != null);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, DefaultWolPort), macAddress, password);
         }
 
@@ -122,6 +157,10 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, PhysicalAddress macAddress)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, DefaultWolPort), macAddress);
         }
 
@@ -138,6 +177,11 @@ namespace System.Net
         /// <returns />
         public static void SendWol(this IPAddress target, PhysicalAddress macAddress, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentNullException>(password != null);
+#endif
             Net.SendWol.Send(new IPEndPoint(target, DefaultWolPort), macAddress, password);
         }
 
@@ -151,6 +195,9 @@ namespace System.Net
         /// <returns>Eine <see cref="T:System.Net.ArpRequestResult">ArpRequestResult</see>-Instanz, welche die Ergebnisse der Anfrage enthält.</returns>
         public static ArpRequestResult SendArpRequest(this IPAddress destination)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(destination != null);
+#endif
             return ArpRequest.Send(destination);
         }
 
@@ -174,6 +221,10 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5, int port)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentException>(port >= 0);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, port), mac0, mac1, mac2, mac3, mac4, mac5);
         }
 
@@ -190,6 +241,10 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentException>(DefaultWolPort >= 0);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, DefaultWolPort), mac0, mac1, mac2, mac3, mac4, mac5);
         }
 
@@ -204,6 +259,12 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, byte[] macAddress, int port)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+            Contract.Requires<ArgumentException>(port >= 0);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, port), macAddress);
         }
 
@@ -220,6 +281,12 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, byte[] macAddress, int port, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+            Contract.Requires<ArgumentNullException>(password != null);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, port), macAddress, password);
         }
 
@@ -233,6 +300,11 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, byte[] macAddress)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, DefaultWolPort), macAddress);
         }
 
@@ -248,6 +320,12 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, byte[] macAddress, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
+            Contract.Requires<ArgumentNullException>(password != null);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, DefaultWolPort), macAddress, password);
         }
 
@@ -261,6 +339,10 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, PhysicalAddress macAddress)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, DefaultWolPort), macAddress);
         }
 
@@ -276,6 +358,11 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendWolAsync(this IPAddress target, PhysicalAddress macAddress, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentNullException>(password != null);
+#endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, DefaultWolPort), macAddress, password);
         }
 
@@ -290,6 +377,9 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher einen ARP-Request sendet.</returns>
         public static Task<ArpRequestResult> SendArpRequestAsync(this IPAddress destination)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(destination != null);
+#endif
             return ArpRequest.SendAsync(destination);
         }
 

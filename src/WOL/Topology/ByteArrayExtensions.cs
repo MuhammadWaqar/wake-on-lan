@@ -2,14 +2,22 @@
 using System.Diagnostics;
 using System.Text;
 
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
+
 namespace System.Net.Topology
 {
     internal static class ByteArrayExtensions
     {
         internal static IEnumerable<bool> ToBitStream(this byte[] bytes, bool fromLeft)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(bytes != null);
+#else
             if (bytes == null)
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("bytes");
+#endif
 
             if (fromLeft)
             {
@@ -52,22 +60,35 @@ namespace System.Net.Topology
 
         internal static int CountFromLeft(this byte[] bits, bool value)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(bits != null);
+#else
             if (bits == null)
                 throw new ArgumentNullException("bits");
+#endif
             return CountFromSide(bits, value, true);
         }
 
         internal static int CountFromRight(this byte[] bits, bool value)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(bits != null);
+#else
             if (bits == null)
                 throw new ArgumentNullException("bits");
+#endif
             return CountFromSide(bits, value, false);
         }
 
         internal static string ToBinaryString(this byte[] bits, char separator)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(bits != null);
+            Contract.Ensures(Contract.Result<string>() != null);
+#else
             if (bits == null)
                 throw new ArgumentNullException("bits");
+#endif
 
             const int radix = 2;
             const int padding = 8;
@@ -83,8 +104,13 @@ namespace System.Net.Topology
 
         internal static string ToBinaryString(this byte[] bits)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(bits != null);
+            Contract.Ensures(Contract.Result<string>() != null);
+#else
             if (bits == null)
                 throw new ArgumentNullException("bits");
+#endif
 
             const int radix = 2;
             const int padding = 8;
@@ -100,8 +126,12 @@ namespace System.Net.Topology
 
         internal static bool RepresentsValidNetMask(this byte[] bits)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(bits != null);
+#else
             if (bits == null)
                 throw new ArgumentNullException("bits");
+#endif
 
             int fromLeft = bits.CountFromLeft(true);
             int fromRight = bits.CountFromRight(false);
@@ -112,10 +142,17 @@ namespace System.Net.Topology
 
         internal static byte[] And(this byte[] b1, byte[] b2)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(b1 != null);
+            Contract.Requires<ArgumentNullException>(b2 != null);
+            Contract.Ensures(Contract.Result<byte[]>() != null);
+            Contract.Ensures(Contract.Result<byte[]>().Length == Math.Max(b1.Length, b2.Length));
+#else
             if (b1 == null)
                 throw new ArgumentNullException("b1");
             if (b2 == null)
                 throw new ArgumentNullException("b2");
+#endif
 
             if (b1.Length == 1 && b2.Length == 1)
             {
@@ -164,10 +201,17 @@ namespace System.Net.Topology
 
         internal static byte[] Or(this byte[] b1, byte[] b2)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(b1 != null);
+            Contract.Requires<ArgumentNullException>(b2 != null);
+            Contract.Ensures(Contract.Result<byte[]>() != null);
+            Contract.Ensures(Contract.Result<byte[]>().Length == Math.Max(b1.Length, b2.Length));
+#else
             if (b1 == null)
                 throw new ArgumentNullException("b1");
             if (b2 == null)
                 throw new ArgumentNullException("b2");
+#endif
 
             if (b1.Length == 1 && b2.Length == 1)
             {
@@ -216,10 +260,17 @@ namespace System.Net.Topology
 
         internal static byte[] Xor(this byte[] b1, byte[] b2)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(b1 != null);
+            Contract.Requires<ArgumentNullException>(b2 != null);
+            Contract.Ensures(Contract.Result<byte[]>() != null);
+            Contract.Ensures(Contract.Result<byte[]>().Length == Math.Max(b1.Length, b2.Length));
+#else
             if (b1 == null)
                 throw new ArgumentNullException("b1");
             if (b2 == null)
                 throw new ArgumentNullException("b2");
+#endif
 
             // TODO: Testing
 
@@ -270,8 +321,14 @@ namespace System.Net.Topology
 
         internal static byte[] Not(this byte[] bits)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(bits != null);
+            Contract.Ensures(Contract.Result<byte[]>() != null);
+            Contract.Ensures(Contract.Result<byte[]>().Length == bits.Length);
+#else
             if (bits == null)
                 throw new ArgumentNullException("bits");
+#endif
 
             if (bits.Length == 4)
             {

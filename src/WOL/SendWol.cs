@@ -30,6 +30,9 @@ namespace System.Net
         /// <exception cref="System.Net.Sockets.SocketException">Fehler beim Zugriff auf den Socket. Weitere Informationen finden Sie im Abschnitt "Hinweise".</exception>
         public static void Send(IPEndPoint target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+#endif
             Send(target, new[] { mac0, mac1, mac2, mac3, mac4, mac5 });
         }
 
@@ -44,7 +47,9 @@ namespace System.Net
         public static void Send(IPEndPoint target, byte[] macAddress)
         {
 #if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
             Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentNullException>(macAddress.Length == 6);
 #else
             if (macAddress == null)
                 throw new ArgumentNullException("macAddress");
@@ -67,7 +72,9 @@ namespace System.Net
         public static void Send(IPEndPoint target, byte[] macAddress, SecureOnPassword password)
         {
 #if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
             Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6);
             Contract.Requires<ArgumentNullException>(password != null);
 #else
             if (macAddress == null)
@@ -90,8 +97,13 @@ namespace System.Net
         /// <exception cref="System.Net.Sockets.SocketException">Fehler beim Zugriff auf den Socket. Weitere Informationen finden Sie im Abschnitt "Hinweise".</exception>
         public static void Send(IPEndPoint target, PhysicalAddress macAddress)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+#else
             if (macAddress == null)
                 throw new ArgumentNullException("macAddress");
+#endif
 
             byte[] packet = GetWolPacket(macAddress.GetAddressBytes());
             SendPacket(target, packet);
@@ -152,11 +164,16 @@ namespace System.Net
         /// <exception cref="System.Net.Sockets.SocketException">Fehler beim Zugriff auf den Socket. Weitere Informationen finden Sie im Abschnitt "Hinweise".</exception>
         public static void Send(IPEndPoint target, PhysicalAddress macAddress, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentNullException>(password != null);
+#else
             if (macAddress == null)
                 throw new ArgumentNullException("macAddress");
-
             if (password == null)
                 throw new ArgumentNullException("password");
+#endif
 
             byte[] passwordBuffer = password.GetPasswordBytes();
             byte[] packet = GetWolPacket(macAddress.GetAddressBytes(), passwordBuffer);
@@ -167,9 +184,16 @@ namespace System.Net
         {
 #if FEATURE_CONTRACTS
             Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(packet != null);
 #endif
             using (var cl = new UdpClient())
+            {
+#if FEATURE_CONTRACTS
+                Contract.Assume(cl != null);
+#endif
                 cl.Send(packet, packet.Length, target);
+
+            }
         }
 
         #endregion
@@ -189,6 +213,9 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher ein Wake-On-LAN-Signal an einen Client sendet.</returns>
         public static Task SendAsync(IPEndPoint target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+#endif
             return SendAsync(target, new[] { mac0, mac1, mac2, mac3, mac4, mac5 });
         }
 
@@ -361,8 +388,9 @@ namespace System.Net
         {
 #if FEATURE_CONTRACTS
             Contract.Requires<ArgumentNullException>(macAddress != null);
-            Contract.Requires<ArgumentException>(macAddress.Length != 6, Localization.ArgumentExceptionInvalidMacAddressLength);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6, Localization.ArgumentExceptionInvalidMacAddressLength);
             Contract.Ensures(Contract.Result<byte[]>() != null);
+            Contract.Ensures(Contract.Result<byte[]>().Length == 17 * 6);
 #else
             if (macAddress == null)
                 throw new ArgumentNullException("macAddress");
@@ -391,9 +419,9 @@ namespace System.Net
         {
 #if FEATURE_CONTRACTS
             Contract.Requires<ArgumentNullException>(macAddress != null);
-            Contract.Requires<ArgumentException>(macAddress.Length != 6, Localization.ArgumentExceptionInvalidMacAddressLength);
+            Contract.Requires<ArgumentException>(macAddress.Length == 6, Localization.ArgumentExceptionInvalidMacAddressLength);
             Contract.Requires<ArgumentNullException>(password != null);
-            Contract.Requires<ArgumentException>(password.Length != 6, Localization.ArgumentExceptionInvalidPasswordLength);
+            Contract.Requires<ArgumentException>(password.Length == 6, Localization.ArgumentExceptionInvalidPasswordLength);
             Contract.Ensures(Contract.Result<byte[]>() != null);
 #else
             if (macAddress == null)

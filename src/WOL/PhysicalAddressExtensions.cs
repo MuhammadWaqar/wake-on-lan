@@ -3,6 +3,9 @@
 #if NET45
 using System.Threading.Tasks;
 #endif
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
 
 using System.Net.NetworkInformation;
 
@@ -21,10 +24,17 @@ namespace System.Net
         /// <param name="address">Die Instanz der PhysicalAddress, die im Wake-On-LAN-Signal angesprochen werden soll.</param>
         public static void SendWol(this PhysicalAddress address)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(address != null);
+#else
             if (address == null)
                 throw new ArgumentNullException("address");
-
-            IPAddress.Broadcast.SendWol(address.GetAddressBytes());
+#endif
+            var bytes = address.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null && bytes.Length == 6);
+#endif
+            IPAddress.Broadcast.SendWol(bytes);
         }
         /// <summary>
         /// Sendet ein Wake-On-LAN-Signal an die Broadcast-IP-Adresse mit der MAC-Adresse der Instanz.
@@ -34,10 +44,18 @@ namespace System.Net
         /// <exception cref="System.ArgumentNullException">password ist null.</exception>
         public static void SendWol(this PhysicalAddress address, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(address != null);
+            Contract.Requires<ArgumentNullException>(password != null);
+#else
             if (address == null)
                 throw new ArgumentNullException("address");
-
-            IPAddress.Broadcast.SendWol(address.GetAddressBytes(), password);
+#endif
+            var bytes = address.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null && bytes.Length == 6);
+#endif
+            IPAddress.Broadcast.SendWol(bytes, password);
         }
         /// <summary>
         /// Sendet ein Wake-On-LAN-Signal an die IP-Adresse der target-Instanz mit der MAC-Adresse der Instanz.
@@ -46,10 +64,18 @@ namespace System.Net
         /// <param name="target">Der Ziel-IPEndPoint.</param>
         public static void SendWol(this PhysicalAddress address, IPAddress target)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(address != null);
+            Contract.Requires<ArgumentNullException>(target != null);
+#else
             if (address == null)
                 throw new ArgumentNullException("address");
-
-            target.SendWol(address.GetAddressBytes());
+#endif
+            var bytes = address.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null && bytes.Length == 6);
+#endif
+            target.SendWol(bytes);
         }
 
         /// <summary>
@@ -61,10 +87,19 @@ namespace System.Net
         /// <exception cref="System.ArgumentNullException">password ist null.</exception>
         public static void SendWol(this PhysicalAddress address, IPAddress target, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(address != null);
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(password != null);
+#else
             if (address == null)
                 throw new ArgumentNullException("address");
-
-            target.SendWol(address.GetAddressBytes(), password);
+#endif
+            var bytes = address.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null && bytes.Length == 6);
+#endif
+            target.SendWol(bytes, password);
         }
 
 
@@ -75,10 +110,18 @@ namespace System.Net
         /// <param name="target">Der Ziel-IPEndPoint.</param>
         public static void SendWol(this PhysicalAddress address, IPEndPoint target)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(address != null);
+            Contract.Requires<ArgumentNullException>(target != null);
+#else
             if (address == null)
                 throw new ArgumentNullException("address");
-
-            target.SendWol(address.GetAddressBytes());
+#endif
+            var bytes = address.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null && bytes.Length == 6);
+#endif
+            target.SendWol(bytes);
         }
 
         /// <summary>
@@ -90,10 +133,19 @@ namespace System.Net
         /// <exception cref="System.ArgumentNullException">password ist null.</exception>
         public static void SendWol(this PhysicalAddress address, IPEndPoint target, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(address != null);
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(password != null);
+#else
             if (address == null)
                 throw new ArgumentNullException("address");
-
-            target.SendWol(address.GetAddressBytes(), password);
+#endif
+            var bytes = address.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null && bytes.Length == 6);
+#endif
+            target.SendWol(bytes, password);
         }
 
         #endregion

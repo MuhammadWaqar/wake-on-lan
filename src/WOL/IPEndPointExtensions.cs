@@ -3,6 +3,9 @@
 #if NET45
 using System.Threading.Tasks;
 #endif
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
 
 using System.Net.NetworkInformation;
 
@@ -24,6 +27,9 @@ namespace System.Net
         /// <param name="mac5">Sechstes MAC-Adress-Byte.</param>
         public static void SendWol(this IPEndPoint target, byte mac0, byte mac1, byte mac2, byte mac3, byte mac4, byte mac5)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+#endif
             Net.SendWol.Send(target, mac0, mac1, mac2, mac3, mac4, mac5);
         }
 
@@ -36,6 +42,10 @@ namespace System.Net
         /// <exception cref="System.ArgumentNullException">macAddress ist null.</exception>
         public static void SendWol(this IPEndPoint target, byte[] macAddress)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+#endif
             Net.SendWol.Send(target, macAddress);
         }
 
@@ -61,6 +71,10 @@ namespace System.Net
         /// <exception cref="System.ArgumentNullException">macAddress ist null.</exception>
         public static void SendWol(this IPEndPoint target, PhysicalAddress macAddress)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+#endif
             Net.SendWol.Send(target, macAddress);
         }
 
@@ -75,6 +89,10 @@ namespace System.Net
         /// <exception cref="System.ArgumentNullException">password ist null.</exception>
         public static void SendWol(this IPEndPoint target, byte[] macAddress, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+#endif
             Net.SendWol.Send(target, macAddress, password);
         }
 
@@ -104,6 +122,11 @@ namespace System.Net
         /// <exception cref="System.ArgumentNullException">password ist null.</exception>
         public static void SendWol(this IPEndPoint target, PhysicalAddress macAddress, SecureOnPassword password)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(target != null);
+            Contract.Requires<ArgumentNullException>(macAddress != null);
+            Contract.Requires<ArgumentNullException>(password != null);
+#endif
             Net.SendWol.Send(target, macAddress, password);
         }
 
