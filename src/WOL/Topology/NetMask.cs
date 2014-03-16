@@ -1,5 +1,9 @@
 ﻿using System.Text;
 
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
+
 namespace System.Net.Topology
 {
     /// <summary>Represents an IPv4 net mask.</summary>
@@ -124,6 +128,11 @@ namespace System.Net.Topology
         /// <returns>The bits of the net mask instance as an BitArray object instance.</returns>
         public byte[] GetMaskBytes()
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires(_maskBytes != null);
+            Contract.Ensures(Contract.Result<byte[]>() != null);
+            Contract.Ensures(Contract.Result<byte[]>().Length == 4);
+#endif
             return new[] { _maskBytes[0], _maskBytes[1], _maskBytes[2], _maskBytes[3] };
         }
 
@@ -139,6 +148,10 @@ namespace System.Net.Topology
         /// <remarks>Because <see cref="T:System.Net.Topology.NetMask"/> is a reference type, this method is static. If it were not like this, you could change the value of <see cref="T:System.Net.Topology.NetMask"/>.Empty, for example.</remarks>
         public static NetMask Extend(NetMask mask, int value)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires(mask != null);
+            Contract.Ensures(Contract.Result<NetMask>() != null);
+#endif
             int currentCidr = mask._cidr;
             if (currentCidr >= MaskLength * 8)
                 return new NetMask(mask);
@@ -158,6 +171,10 @@ namespace System.Net.Topology
         /// <remarks>Because <see cref="T:System.Net.Topology.NetMask"/> is a reference type, this method is static. If it were not like this, you could change the value of <see cref="T:System.Net.Topology.NetMask"/>.Empty, for example.</remarks>
         public static NetMask Abbreviate(NetMask mask, int value)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires(mask != null);
+            Contract.Ensures(Contract.Result<NetMask>() != null);
+#endif
             int currentCidr = mask._cidr;
             if (currentCidr < 1)
                 return new NetMask(mask);
@@ -174,11 +191,17 @@ namespace System.Net.Topology
         /// <returns>True if the given array of <see cref="T:System.Byte"/> represents a valid net mask, otherwise false.</returns>
         public static bool GetIsValidNetMask(byte[] mask)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires(mask != null);
+#endif
             return mask.RepresentsValidNetMask();
         }
 
         private static byte[] BytesFromCidrValue(int cidr)
         {
+#if FEATURE_CONTRACTS
+            Contract.Ensures(Contract.Result<byte[]>() != null);
+#endif
             int target = MaskLength * 8 - cidr;
             int mask = 0;
             for (int i = 0; i < target; ++i)
@@ -250,6 +273,10 @@ namespace System.Net.Topology
         {
             var ipBytes = address == null ? new byte[MaskLength] : address.GetAddressBytes();
             var maskBytes = mask == null ? new byte[MaskLength] : mask._maskBytes;
+#if FEATURE_CONTRACTS
+            Contract.Assume(maskBytes != null);
+            Contract.Assume(ipBytes != null);
+#endif
             byte[] combinedBytes = maskBytes.And(ipBytes);
 
             return new IPAddress(combinedBytes);
@@ -319,6 +346,9 @@ namespace System.Net.Topology
         /// <filterpriority>1</filterpriority>
         public override string ToString()
         {
+#if FEATURE_CONTRACTS
+            Contract.Ensures(Contract.Result<string>() != null);
+#endif
             var sb = new StringBuilder(4 * 3 + 3 * 3 + 32 + 3 + 3); // 255.255.255.255 (11111111111111111111111111111111)
 
             var arr = new byte[MaskLength];
@@ -381,6 +411,10 @@ namespace System.Net.Topology
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
+#if FEATURE_CONTRACTS
+            Contract.Assume(_maskBytes != null);
+            Contract.Assume(_maskBytes.Length == 4);
+#endif
             int hashCode = _maskBytes[0] << 24;
             hashCode |= _maskBytes[1] << 16;
             hashCode |= _maskBytes[2] << 8;

@@ -84,6 +84,10 @@ namespace System.Net
 #endif
 
             byte[] passwordBuffer = password.GetPasswordBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(passwordBuffer != null);
+            Contract.Assume(passwordBuffer.Length == 6);
+#endif
             byte[] packet = GetWolPacket(macAddress, passwordBuffer);
             SendPacket(target, packet);
         }
@@ -104,8 +108,12 @@ namespace System.Net
             if (macAddress == null)
                 throw new ArgumentNullException("macAddress");
 #endif
-
-            byte[] packet = GetWolPacket(macAddress.GetAddressBytes());
+            var bytes = macAddress.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null);
+            Contract.Assume(bytes.Length == 6);
+#endif
+            byte[] packet = GetWolPacket(bytes);
             SendPacket(target, packet);
         }
 
@@ -176,7 +184,13 @@ namespace System.Net
 #endif
 
             byte[] passwordBuffer = password.GetPasswordBytes();
-            byte[] packet = GetWolPacket(macAddress.GetAddressBytes(), passwordBuffer);
+            var bytes = macAddress.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null);
+            Contract.Assume(bytes.Length == 6);
+            Contract.Assume(passwordBuffer != null);
+#endif
+            byte[] packet = GetWolPacket(bytes, passwordBuffer);
             SendPacket(target, packet);
         }
 
@@ -190,6 +204,7 @@ namespace System.Net
             {
 #if FEATURE_CONTRACTS
                 Contract.Assume(cl != null);
+                Contract.Assume(target != null);
 #endif
                 cl.Send(packet, packet.Length, target);
 
@@ -293,8 +308,12 @@ namespace System.Net
             if (macAddress == null)
                 throw new ArgumentNullException("macAddress");
 #endif
-
-            var p = GetWolPacket(macAddress.GetAddressBytes());
+            var bytes = macAddress.GetAddressBytes();
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null);
+            Contract.Assume(bytes.Length == 6);
+#endif
+            var p = GetWolPacket(bytes);
             return SendPacketAsync(target, p);
             //return new Task(() => Send(target, macAddress));
         }
@@ -322,9 +341,14 @@ namespace System.Net
             if (password == null)
                 throw new ArgumentNullException("password");
 #endif
-
+            var bytes = macAddress.GetAddressBytes();
             var passwordBuffer = password.GetPasswordBytes();
-            var p = GetWolPacket(macAddress.GetAddressBytes(), passwordBuffer);
+#if FEATURE_CONTRACTS
+            Contract.Assume(bytes != null);
+            Contract.Assume(bytes.Length == 6);
+            Contract.Assume(password != null);
+#endif
+            var p = GetWolPacket(bytes, passwordBuffer);
             return SendPacketAsync(target, p);
         }
 
@@ -406,7 +430,12 @@ namespace System.Net
 
             for (offset = 6; offset < 17 * 6; offset += 6)
                 for (i = 0; i < 6; ++i)
+                {
+#if FEATURE_CONTRACTS
+                    Contract.Assume(packet.Length > i + offset); // ....
+#endif
                     packet[i + offset] = macAddress[i];
+                }
 
             return packet;
         }

@@ -1,7 +1,10 @@
 ﻿#if NET35
-
 using System.Collections.Generic;
 using System.Diagnostics;
+
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
 
 namespace System.Net.Topology
 {
@@ -110,14 +113,19 @@ namespace System.Net.Topology
         /// <returns>The network prefix of an <see cref="T:System.Net.IPAddress"/></returns>
         public static IPAddress GetNetworkPrefix(this IPAddress address, NetMask mask)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(address != null);
+            Contract.Requires<ArgumentNullException>(mask != null);
+            Contract.Requires<NotSupportedException>(address.AddressFamily == Sockets.AddressFamily.InterNetwork, OnlyIPv4Supported);
+            Contract.Ensures(Contract.Result<IPAddress>() != null);
+#else
             if (address == null)
                 throw new ArgumentNullException("address");
             if (mask == null)
                 throw new ArgumentNullException("mask");
-
             if (address.AddressFamily != Sockets.AddressFamily.InterNetwork)
                 throw new NotSupportedException(OnlyIPv4Supported);
-
+#endif
             return mask & address;
         }
 

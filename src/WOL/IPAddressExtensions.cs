@@ -35,6 +35,7 @@ namespace System.Net
 #if FEATURE_CONTRACTS
             Contract.Requires<ArgumentNullException>(target != null);
             Contract.Requires<ArgumentException>(port >= 0);
+            Contract.Requires<ArgumentException>(port < 65535);
 #endif
             Net.SendWol.Send(new IPEndPoint(target, port), mac0, mac1, mac2, mac3, mac4, mac5);
         }
@@ -77,6 +78,7 @@ namespace System.Net
             Contract.Requires<ArgumentNullException>(macAddress != null);
             Contract.Requires<ArgumentException>(macAddress.Length == 6);
             Contract.Requires<ArgumentException>(port >= 0);
+            Contract.Requires<ArgumentException>(port < 65535);
 #endif
             Net.SendWol.Send(new IPEndPoint(target, port), macAddress);
         }
@@ -100,6 +102,7 @@ namespace System.Net
             Contract.Requires<ArgumentNullException>(macAddress != null);
             Contract.Requires<ArgumentException>(macAddress.Length == 6);
             Contract.Requires<ArgumentException>(port >= 0);
+            Contract.Requires<ArgumentException>(port < 65535);
             Contract.Requires<ArgumentNullException>(password != null);
 #endif
             Net.SendWol.Send(new IPEndPoint(target, port), macAddress, password);
@@ -224,6 +227,7 @@ namespace System.Net
 #if FEATURE_CONTRACTS
             Contract.Requires<ArgumentNullException>(target != null);
             Contract.Requires<ArgumentException>(port >= 0);
+            Contract.Requires<ArgumentException>(port < 65535);
 #endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, port), mac0, mac1, mac2, mac3, mac4, mac5);
         }
@@ -244,6 +248,7 @@ namespace System.Net
 #if FEATURE_CONTRACTS
             Contract.Requires<ArgumentNullException>(target != null);
             Contract.Requires<ArgumentException>(DefaultWolPort >= 0);
+            Contract.Requires<ArgumentException>(DefaultWolPort < 65535);
 #endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, DefaultWolPort), mac0, mac1, mac2, mac3, mac4, mac5);
         }
@@ -264,6 +269,7 @@ namespace System.Net
             Contract.Requires<ArgumentNullException>(macAddress != null);
             Contract.Requires<ArgumentException>(macAddress.Length == 6);
             Contract.Requires<ArgumentException>(port >= 0);
+            Contract.Requires<ArgumentException>(port < 65535);
 #endif
             return Net.SendWol.SendAsync(new IPEndPoint(target, port), macAddress);
         }

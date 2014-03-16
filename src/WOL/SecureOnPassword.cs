@@ -39,7 +39,7 @@ namespace System.Net
         {
 #if FEATURE_CONTRACTS
             Contract.Ensures(Contract.Result<byte[]>() != null);
-            Contract.Ensures(Contract.Result<byte[]>().Length == _password.Length || Contract.Result<byte[]>().Length == 0);
+            Contract.Ensures(_password == null ? Contract.Result<byte[]>().Length == 0 : Contract.Result<byte[]>().Length == _password.Length);
 #endif
             if (_password == null)
                 return new byte[0];
@@ -110,6 +110,8 @@ namespace System.Net
         {
 #if FEATURE_CONTRACTS
             Contract.Ensures(Contract.Result<string>() != null);
+            if (_password == null)
+                return string.Empty;
 #endif
             var f = new string[6];
             for (int i = 0; i < f.Length; i++)
