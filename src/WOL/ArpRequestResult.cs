@@ -1,6 +1,10 @@
 using System.Net.NetworkInformation;
 using System.Text;
 
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
+
 namespace System.Net
 {
     /// <summary>
@@ -18,6 +22,10 @@ namespace System.Net
         /// <param name="address">Die physikalische Adresse</param>
         public ArpRequestResult(PhysicalAddress address)
         {
+#if FEATURE_CONTRACTS
+            Contract.Ensures(Exception == null);
+            Contract.Ensures(Address == address);
+#endif
             Exception = null;
             Address = address;
         }
@@ -26,6 +34,10 @@ namespace System.Net
         /// <param name="exception">Der aufgetretene Fehler</param>
         public ArpRequestResult(Exception exception)
         {
+#if FEATURE_CONTRACTS
+            Contract.Ensures(Exception == exception);
+            Contract.Ensures(Address == null);
+#endif
             Exception = exception;
             Address = null;
         }
@@ -33,6 +45,9 @@ namespace System.Net
         /// <summary>Konvertiert ARP-Rückgabewerte in eine Zeichenfolge.</summary>
         public override string ToString()
         {
+#if FEATURE_CONTRACTS
+            Contract.Ensures(Contract.Result<string>() != null);
+#endif
             var sb = new StringBuilder();
             if (Address == null)
                 sb.Append("no address");
