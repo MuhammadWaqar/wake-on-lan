@@ -4,6 +4,9 @@ using System.Net.NetworkInformation;
 #if NET45
 using System.Threading.Tasks;
 #endif
+#if FEATURE_CONTRACTS
+using System.Diagnostics.Contracts;
+#endif
 
 namespace System.Net
 {
@@ -17,8 +20,13 @@ namespace System.Net
         /// <returns>Eine <see cref="T:System.Net.ArpRequestResult">ArpRequestResult</see>-Instanz, welche die Ergebnisse der Anfrage enthält.</returns>
         public static ArpRequestResult Send(IPAddress destination)
         {
+#if FEATURE_CONTRACTS
+            Contract.Requires<ArgumentNullException>(destination != null);
+            Contract.Ensures(Contract.Result<ArpRequestResult>() != null);
+#else
             if (destination == null)
                 throw new ArgumentNullException("destination");
+#endif
 
             int destIp = BitConverter.ToInt32(destination.GetAddressBytes(), 0);
 
@@ -40,6 +48,9 @@ namespace System.Net
         /// <returns>Ein asynchroner Task, welcher einen ARP-Request sendet.</returns>
         public static Task<ArpRequestResult> SendAsync(IPAddress destination)
         {
+#if FEATURE_CONTRACTS
+            Contract.Ensures(Contract.Result<Task<ArpRequestResult>>() != null);
+#endif
             return Task.Run(() => Send(destination));
         }
 #endif
